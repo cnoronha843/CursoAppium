@@ -31,17 +31,17 @@ public class FormularioTeste {
                 @Test
                 public void devePreencherCampo () throws MalformedURLException {
                 //Selecionar formulario
-                WebElement el1 = driver.findElement (By.xpath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView"));
+                MobileElement el1 = driver.findElement (By.xpath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.TextView"));
                 el1.click ();
                 //Escrever no formulario
-                WebElement el2 = driver.findElement (By.className ("android.widget.EditText"));
+                    MobileElement el2 = driver.findElement (By.className ("android.widget.EditText"));
                 el2.sendKeys ("Carlos André");
                 String valorEntrada = el2.getText ();
                 //Salvar o que foi escrito
-                WebElement el3 = driver.findElement (By.className ("android.widget.Button"));
+                    MobileElement el3 = driver.findElement (By.className ("android.widget.Button"));
                 el3.click ();
                 //Capturar o texto escrito
-                WebElement el4 = driver.findElement (By.xpath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]"));
+                    MobileElement el4 = driver.findElement (By.xpath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[2]"));
                 //Validar se o valor exibido é igual ao valor salvo
                 String valorExibido = el4.getText ();
                 Assert.assertEquals (valorEntrada,valorExibido.substring (6));
@@ -49,20 +49,20 @@ public class FormularioTeste {
                 @Test
                 public void deveInteragirCombo () throws MalformedURLException {
                 //Selecionar formulario
-                WebElement el1 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'Formulário']"));
+                    MobileElement el1 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'Formulário']"));
         el1.click ();
         //Clicar no combo
-        WebElement el2 = driver.findElement (By.className ("android.widget.Spinner"));
+                    MobileElement el2 = driver.findElement (By.className ("android.widget.Spinner"));
         el2.click ();
         //Selecionar opcao desejada
-        WebElement el3 = driver.findElement (By.xpath ("//android.widget.CheckedTextView[@text= 'PS4']"));
+                    MobileElement el3 = driver.findElement (By.xpath ("//android.widget.CheckedTextView[@text= 'PS4']"));
         String opcaoSelecionada = el3.getText ().toLowerCase(Locale.ROOT);
         el3.click ();
         //Salvar o que foi escrito
-        WebElement el4 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'SALVAR']"));
+                    MobileElement el4 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'SALVAR']"));
         el4.click ();
         //Capturar o texto escrito
-        WebElement el5 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'Console: ps4']"));
+                    MobileElement el5 = driver.findElement (By.xpath ("//android.widget.TextView[@text= 'Console: ps4']"));
         String opcaoExibida = el5.getText ();
         System.out.println (opcaoExibida.substring (9));
         Assert.assertEquals (opcaoSelecionada,opcaoExibida.substring (9));
