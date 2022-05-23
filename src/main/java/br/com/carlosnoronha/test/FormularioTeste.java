@@ -1,18 +1,14 @@
 package br.com.carlosnoronha.test;
-import br.com.carlosnoronha.appium.core.DSL;
-import br.com.carlosnoronha.appium.core.DriverFactory;
+import br.com.carlosnoronha.appium.core.BaseTest;
 import br.com.carlosnoronha.page.FormularioPage;
 import br.com.carlosnoronha.page.MenuPage;
-import io.appium.java_client.MobileBy;
 import org.junit.*;
-import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
 
 
-public class FormularioTeste {
+public class FormularioTeste extends BaseTest {
 
-    private DSL dsl = new DSL ();
     private MenuPage menu = new MenuPage ();
     private FormularioPage page = new FormularioPage ();
     @Before
@@ -81,9 +77,6 @@ public class FormularioTeste {
         Assert.assertEquals ("Marcado",checkBoxExibido);
     }
 
-    @After
-    public void fecharApp(){
-        DriverFactory.killDriver ();
-    }
+
 
 }

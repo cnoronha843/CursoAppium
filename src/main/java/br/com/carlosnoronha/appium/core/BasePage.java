@@ -1,17 +1,17 @@
 package br.com.carlosnoronha.appium.core;
 
-import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
 
-import static br.com.carlosnoronha.appium.core.DriverFactory.*;
+import static br.com.carlosnoronha.appium.core.DriverFactory.getDiver;
 
-public class DSL {
+public class BasePage {
+
     public void escrever (By by, String texto) throws MalformedURLException, InterruptedException {
-             getDiver().
-                     findElement (by).sendKeys (texto);
-        }
+        getDiver().
+                findElement (by).sendKeys (texto);
+    }
     public String obterTexto(By by) throws MalformedURLException, InterruptedException {
 
         return getDiver ().findElement (by).getText ();
@@ -46,8 +46,4 @@ public class DSL {
     public void clicar(By by) throws MalformedURLException, InterruptedException {
         getDiver ().findElement (by).click ();
     }
-
-
-
 }
-
