@@ -12,7 +12,7 @@ public class DriverFactory {
 
     public static AndroidDriver<AndroidElement> driver;
 
-    public static AndroidDriver<AndroidElement> getDiver() throws MalformedURLException, InterruptedException {
+    public static AndroidDriver<AndroidElement> getDriver() throws MalformedURLException, InterruptedException {
         if (driver == null){
             createDriver ();
         }

@@ -20,7 +20,6 @@ public class FormularioTeste extends BaseTest {
 
     @Test
     public void devePreencherCampo () throws InterruptedException, MalformedURLException {
-        Thread.sleep (1000);
         //Escrever no formulario
         String valorEntrada = "Carlos André";
         page.escreverNome (valorEntrada);
@@ -35,7 +34,6 @@ public class FormularioTeste extends BaseTest {
     }
     @Test
     public void deveInteragirCombo () throws InterruptedException, MalformedURLException {
-        Thread.sleep (1000);
         //Clicar no combo
         page.selecionarCombo ("PS4");
         Thread.sleep (1000);
@@ -47,7 +45,6 @@ public class FormularioTeste extends BaseTest {
     }
     @Test
     public void deveInteragirSwitchCheckBox () throws InterruptedException, MalformedURLException {
-        Thread.sleep (2000);
         Assert.assertFalse (page.resultCheckBox ());
         Assert.assertTrue (page.resultSwitch ());
         page.clicarCheckBox ();
