@@ -1,4 +1,4 @@
-package br.com.carlosnoronha.test;
+package br.com.carlosnoronha.appium.test;
 
 
 

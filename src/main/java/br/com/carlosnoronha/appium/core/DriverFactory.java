@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
 
@@ -27,14 +28,20 @@ public class DriverFactory {
     }
 
 
-    private static void createDriver() throws MalformedURLException, InterruptedException {
+    private static void createDriver(){
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
         desiredCapabilities.setCapability("deviceName", "Galaxy Nexus API 24");
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability ("automationName", "uiautomator2");
         desiredCapabilities.setCapability ("appPackage", "com.ctappium");
         desiredCapabilities.setCapability ("appActivity", "com.ctappium.MainActivity");
-        driver = new AndroidDriver<AndroidElement> (new URL ("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
-        Thread.sleep (3000);
+
+        try {
+            driver = new AndroidDriver<AndroidElement> (new URL ("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);
+        }catch (MalformedURLException e){
+            e.printStackTrace ();
+        }
+        driver.manage ().timeouts ().implicitlyWait (10, TimeUnit.SECONDS);
+
     }
 }

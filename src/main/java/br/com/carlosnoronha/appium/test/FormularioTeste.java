@@ -1,7 +1,7 @@
-package br.com.carlosnoronha.test;
+package br.com.carlosnoronha.appium.test;
 import br.com.carlosnoronha.appium.core.BaseTest;
-import br.com.carlosnoronha.page.FormularioPage;
-import br.com.carlosnoronha.page.MenuPage;
+import br.com.carlosnoronha.appium.page.FormularioPage;
+import br.com.carlosnoronha.appium.page.MenuPage;
 import org.junit.*;
 
 import java.net.MalformedURLException;
@@ -24,9 +24,9 @@ public class FormularioTeste extends BaseTest {
         String valorEntrada = "Carlos André";
         page.escreverNome (valorEntrada);
         //Salvar o que foi escrito
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         page.salvar ();
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         //Capturar o texto escrito
         String valorExibido = page.obterNome ();
         //Validar se o valor exibido é igual ao valor salvo
@@ -36,9 +36,9 @@ public class FormularioTeste extends BaseTest {
     public void deveInteragirCombo () throws InterruptedException, MalformedURLException {
         //Clicar no combo
         page.selecionarCombo ("PS4");
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         page.salvar ();
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         String opcaoExibida = page.obterValorCombo ();
         System.out.println (opcaoExibida.substring (9));
         Assert.assertEquals ("ps4",opcaoExibida.substring (9));
@@ -49,7 +49,7 @@ public class FormularioTeste extends BaseTest {
         Assert.assertTrue (page.resultSwitch ());
         page.clicarCheckBox ();
         page.clicarSwitch ();
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         Assert.assertTrue (page.resultCheckBox ());
         Assert.assertFalse (page.resultSwitch ());
 
@@ -63,7 +63,7 @@ public class FormularioTeste extends BaseTest {
         page.clicarCheckBox ();
         page.selecionarCombo ("PS4");
         page.salvar ();
-        Thread.sleep (1000);
+//        Thread.sleep (1000);
         String nomeExibido = page.obterNome ();
         String consoleExibido = page.obterConsole ();
         String switchExibido = page.obterSwitch ();

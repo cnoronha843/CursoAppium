@@ -1,4 +1,4 @@
-package br.com.carlosnoronha.page;
+package br.com.carlosnoronha.appium.page;
 
 import br.com.carlosnoronha.appium.core.BasePage;
 import io.appium.java_client.MobileBy;

@@ -25,11 +25,10 @@ public class BaseTest {
     public void fecharApp() throws IOException, InterruptedException {
         gerarScreenShot ();
         DriverFactory.getDriver ().resetApp ();
-        Thread.sleep (2000);
+//        Thread.sleep (2000);
 
     }
     public void gerarScreenShot() throws IOException, InterruptedException {
-
         File imagem = ((TakesScreenshot)  DriverFactory.getDriver ()).getScreenshotAs (OutputType.FILE);
         FileUtils.copyFile  ( imagem,new File ("target/screenshots/"+testName.getMethodName ()+".png"));
     }
