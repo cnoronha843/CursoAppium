@@ -1,9 +1,7 @@
 package br.com.carlosnoronha.appium.page;
 
 import br.com.carlosnoronha.appium.core.BasePage;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

@@ -33,10 +33,19 @@ public class BasePage {
 
     }
 
-    public void clicarPorTexto(String texto) throws MalformedURLException, InterruptedException {
+    public void clicarPorChecked(String texto) throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);
         getDriver ().findElement (By.xpath ("//android.widget.CheckedTextView[@text= '"+texto+"']")).click ();
 
+    }
+
+    public void clicarBotaoPorTexto(String texto) throws MalformedURLException, InterruptedException {
+//        Thread.sleep (1000);
+        getDriver ().findElement (By.xpath ("//android.widget.Button[@text= '"+texto+"']")).click ();
+
+    }
+    public void clicarPorTexto(String texto) throws MalformedURLException, InterruptedException {
+        getDriver ().findElement (By.xpath ("//android.widget.TextView[@text= '"+texto+"']")).click ();
     }
     public void clicarSalvar() throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);

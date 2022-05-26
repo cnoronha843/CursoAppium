@@ -14,4 +14,8 @@ public class MenuPage extends BasePage {
         clicarFormulario ("Splash");
 
     }
+    public void acessarAlertas() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Alertas");
+
+    }
 }
