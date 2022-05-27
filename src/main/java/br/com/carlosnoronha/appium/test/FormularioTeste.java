@@ -2,7 +2,9 @@ package br.com.carlosnoronha.appium.test;
 import br.com.carlosnoronha.appium.core.BaseTest;
 import br.com.carlosnoronha.appium.page.FormularioPage;
 import br.com.carlosnoronha.appium.page.MenuPage;
+import io.appium.java_client.MobileBy;
 import org.junit.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.net.MalformedURLException;
@@ -80,6 +82,15 @@ public class FormularioTeste extends BaseTest {
         page.clicarPorTextoView ("7");
         page.clicarPorId ("android:id/button1");
         Assert.assertTrue (page.existeUmElementoPorTexto ("07/01/2000"));
+
+    }
+    @Test
+    public void deveAlterarTime() throws MalformedURLException, InterruptedException {
+        page.clicarPorTexto ("12:00");
+        page.clicar (MobileBy.AccessibilityId ("10"));
+        page.clicar (MobileBy.AccessibilityId ("40"));
+        page.clicarPorId ("android:id/button1");
+        Assert.assertTrue (page.existeUmElementoPorTexto ("10:40"));
 
     }
 
