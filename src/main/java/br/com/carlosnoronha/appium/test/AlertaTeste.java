@@ -6,7 +6,7 @@ import br.com.carlosnoronha.appium.page.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 import java.net.MalformedURLException;
-public class AlertaTest extends BaseTest {
+public class AlertaTeste extends BaseTest {
     MenuPage menu = new MenuPage ();
     AlertaPage page = new AlertaPage ();
     @Test

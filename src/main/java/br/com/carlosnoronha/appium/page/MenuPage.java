@@ -18,4 +18,12 @@ public class MenuPage extends BasePage {
         clicarFormulario ("Alertas");
 
     }
+    public void acessarAbas() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Abas");
+
+    }
+    public void acessarAccordion() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Accordion");
+
+    }
 }

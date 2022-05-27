@@ -26,19 +26,16 @@ public class BasePage {
         //selecionar opção desejada
         clicarPorTexto (valor);
     }
-
     public void clicarFormulario(String texto) throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);
         getDriver ().findElement (By.xpath ("//android.widget.TextView[@text= '"+texto+"']")).click ();
 
     }
-
     public void clicarPorChecked(String texto) throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);
         getDriver ().findElement (By.xpath ("//android.widget.CheckedTextView[@text= '"+texto+"']")).click ();
 
     }
-
     public void clicarBotaoPorTexto(String texto) throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);
         getDriver ().findElement (By.xpath ("//android.widget.Button[@text= '"+texto+"']")).click ();
