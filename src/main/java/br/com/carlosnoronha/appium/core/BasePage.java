@@ -4,6 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
 
+
 import java.net.MalformedURLException;
 import java.util.List;
 
@@ -44,6 +45,15 @@ public class BasePage {
     public void clicarPorTexto(String texto) throws MalformedURLException, InterruptedException {
         getDriver ().findElement (By.xpath ("//android.widget.TextView[@text= '"+texto+"']")).click ();
     }
+    public void clicarPorTextoView(String texto) throws MalformedURLException, InterruptedException {
+        getDriver ().findElement (By.xpath ("//android.view.View[@text= '"+texto+"']")).click ();
+    }
+    public void clicarPorTextoButton(String texto) throws MalformedURLException, InterruptedException {
+        getDriver ().findElement (By.xpath ("//android.view.Button[@text= '"+texto+"']")).click ();
+    }
+    public void clicarPorId(String texto) throws MalformedURLException, InterruptedException {
+        getDriver ().findElement (By.id (texto)).click ();
+    }
     public void clicarSalvar() throws MalformedURLException, InterruptedException {
 //        Thread.sleep (1000);
         getDriver ().findElement (By.xpath ("//android.widget.TextView[@text= 'SALVAR']")).click ();
@@ -59,4 +69,9 @@ public class BasePage {
         List<AndroidElement> elementos = getDriver ().findElements (By.xpath ("//*[@text='" + texto + "']"));
         return elementos.size () > 0;
     }
+//    public void scroll() throws MalformedURLException, InterruptedException {
+//        TouchActions actions = new TouchActions (getDriver ());
+//        actions.scroll ( getDriver ().findElement (By.className ("android.widget.ViewAnimator")),0,100);
+//        actions.perform ();
+//    }
 }

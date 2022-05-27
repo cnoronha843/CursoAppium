@@ -3,6 +3,7 @@ import br.com.carlosnoronha.appium.core.BaseTest;
 import br.com.carlosnoronha.appium.page.FormularioPage;
 import br.com.carlosnoronha.appium.page.MenuPage;
 import org.junit.*;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.net.MalformedURLException;
 
@@ -73,7 +74,13 @@ public class FormularioTeste extends BaseTest {
         Assert.assertEquals ("Off",switchExibido);
         Assert.assertEquals ("Marcado",checkBoxExibido);
     }
+    @Test
+    public void deveAlterarData() throws MalformedURLException, InterruptedException {
+        page.clicarPorTexto ("01/01/2000");
+        page.clicarPorTextoView ("7");
+        page.clicarPorId ("android:id/button1");
+        Assert.assertTrue (page.existeUmElementoPorTexto ("07/01/2000"));
 
-
+    }
 
 }

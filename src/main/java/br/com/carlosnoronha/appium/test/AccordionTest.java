@@ -17,7 +17,6 @@ public class AccordionTest {
         //clicar op1
         page.clicarOp1 ();
         //verficar texto op1
-        Thread.sleep (2000);
         Assert.assertEquals ("Esta é a descrição da opção 1", page.obterValorOp1 ());
     }
 

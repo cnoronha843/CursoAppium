@@ -2,7 +2,10 @@ package br.com.carlosnoronha.appium.page;
 
 import br.com.carlosnoronha.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.net.MalformedURLException;
 
@@ -45,5 +48,9 @@ public class FormularioPage extends BasePage {
     public boolean resultSwitch() throws MalformedURLException, InterruptedException {
         return isCheckMarcado(By.className ("android.widget.Switch"));
     }
+//    public void scrollDataAno() throws MalformedURLException, InterruptedException {
+//         scroll ();
+//    }
+
 
 }
