@@ -35,6 +35,8 @@ public class DriverFactory {
         desiredCapabilities.setCapability ("automationName", "uiautomator2");
         desiredCapabilities.setCapability ("appPackage", "com.ctappium");
         desiredCapabilities.setCapability ("appActivity", "com.ctappium.MainActivity");
+        desiredCapabilities.setCapability("enableMultiWindows", true);
+
 
         try {
             driver = new AndroidDriver<AndroidElement> (new URL ("http://127.0.0.1:4723/wd/hub"), desiredCapabilities);

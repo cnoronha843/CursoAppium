@@ -5,7 +5,6 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.net.MalformedURLException;
 

@@ -5,7 +5,6 @@ import br.com.carlosnoronha.appium.page.MenuPage;
 import io.appium.java_client.MobileBy;
 import org.junit.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.net.MalformedURLException;
 
