@@ -108,4 +108,22 @@ public class BasePage {
                 .perform ();
 
     }
+    public void swipe(double inicio, double fim) throws MalformedURLException, InterruptedException {
+        //pegar o tamanho da tela
+        Dimension size = getDriver ().manage ().window ().getSize ();
+        //Denifinir y
+        int y = size.height / 2;
+        //Definir x inicial
+        int start_x = (int) (size.width * inicio);
+        //Definir x final
+        int end_x = (int) (size.width * fim);
+        //pressionar um ponto da tela
+        new TouchAction (getDriver ())
+                .press (PointOption.point (start_x,y))//segura neste ponto da tela
+                .waitAction (WaitOptions.waitOptions (Duration.ofMillis (500)))// espera por 500 milisegundos
+                .moveTo (PointOption.point (end_x,y))//arrasta até este ponto
+                .release ()//solta a tela
+                .perform ();
+
+    }
 }

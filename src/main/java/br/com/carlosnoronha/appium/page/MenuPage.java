@@ -28,4 +28,7 @@ public class MenuPage extends BasePage {
     public void acessarCliques() throws MalformedURLException, InterruptedException {
         clicarFormulario ("Cliques");
     }
+    public void acessarSwipe() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Swipe");
+    }
 }
