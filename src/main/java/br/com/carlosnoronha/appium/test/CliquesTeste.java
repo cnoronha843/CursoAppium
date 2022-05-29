@@ -19,9 +19,15 @@ public class CliquesTeste extends BaseTest {
         Thread.sleep (1000);
         Assert.assertEquals ("Clique Longo", page.obterTextoCampo ());
         Thread.sleep (1000);
-//
-
-
-
+    }
+    @Test
+    public void deveRealizarCliqueDuplo() throws MalformedURLException, InterruptedException {
+        menu.acessarCliques ();
+        Thread.sleep (1000);
+        page.clicarPorTexto ("Clique duplo");
+        page.clicarPorTexto ("Clique duplo");
+        Thread.sleep (1000);
+        Assert.assertEquals ("Duplo Clique", page.obterTextoCampo ());
+        Thread.sleep (1000);
     }
 }

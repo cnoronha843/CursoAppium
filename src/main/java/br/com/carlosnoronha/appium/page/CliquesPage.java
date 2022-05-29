@@ -23,6 +23,7 @@ public class CliquesPage extends BasePage {
                 .perform ();
 
     }
+
     public String obterTextoCampo() throws MalformedURLException, InterruptedException {
         return getDriver ().findElement (By.xpath ("(//android.widget.TextView)[3]")).getText ();
     }
