@@ -4,12 +4,15 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidElement;
 
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 
 
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.util.List;
 
 import static br.com.carlosnoronha.appium.core.DriverFactory.getDriver;
@@ -82,11 +85,27 @@ public class BasePage {
         return getDriver ().findElement (By.xpath ("//android.view.View[@text= '"+texto+"']")).getText ();
 
     }
+    public String obterMenssagemAlerta() throws MalformedURLException, InterruptedException {
+        return obterTexto (By.id ("android:id/message"));
+    }
 
 
-//    public void scroll() throws MalformedURLException, InterruptedException {
-//        TouchActions actions = new TouchActions (getDriver ());
-//        actions.scroll ( getDriver ().findElement (By.className ("android.widget.ViewAnimator")),0,100);
-//        actions.perform ();
-//    }
+    public void scroll(double inicio, double fim) throws MalformedURLException, InterruptedException {
+        //pegar o tamanho da tela
+        Dimension size = getDriver ().manage ().window ().getSize ();
+        //Denifinir x
+        int x = size.width / 2;
+        //Definir Y inicial
+        int start_y = (int) (size.height * inicio);
+        //Definir Y final
+        int end_y = (int) (size.height * fim);
+        //pressionar um ponto da tela
+        new TouchAction (getDriver ())
+                .press (PointOption.point (x,start_y))//segura neste ponto da tela
+                .waitAction (WaitOptions.waitOptions (Duration.ofMillis (500)))// espera por 500 milisegundos
+                .moveTo (PointOption.point (x,end_y))//arrasta até este ponto
+                .release ()//solta a tela
+                .perform ();
+
+    }
 }
