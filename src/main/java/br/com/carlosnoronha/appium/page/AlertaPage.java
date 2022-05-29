@@ -30,7 +30,7 @@ public class AlertaPage extends BasePage {
         clicarBotaoPorTexto ("SAIR");
     }
     public void clicarForaCaixa() throws MalformedURLException, InterruptedException {
-        tap (890,1302);
+        tap (647,1552);
     }
 
 }

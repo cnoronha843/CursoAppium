@@ -1,6 +1,7 @@
 package br.com.carlosnoronha.appium.core;
 
 
+import org.apache.commons.io.FileUtils;
 import org.aspectj.util.FileUtil;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -30,6 +31,6 @@ public class BaseTest {
     }
     public void gerarScreenShot() throws IOException, InterruptedException {
         File imagem = ((TakesScreenshot)  DriverFactory.getDriver ()).getScreenshotAs (OutputType.FILE);
-        FileUtil.copyFile  ( imagem,new File ("target/screenshots/"+testName.getMethodName ()+".png"));
+        FileUtils.copyFile  ( imagem,new File ("target/screenshots/"+testName.getMethodName ()+".png"));
     }
 }

@@ -24,6 +24,8 @@ public class MenuPage extends BasePage {
     }
     public void acessarAccordion() throws MalformedURLException, InterruptedException {
         clicarFormulario ("Accordion");
-
+    }
+    public void acessarCliques() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Cliques");
     }
 }

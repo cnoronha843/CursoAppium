@@ -35,7 +35,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability ("automationName", "uiautomator2");
         desiredCapabilities.setCapability ("appPackage", "com.ctappium");
         desiredCapabilities.setCapability ("appActivity", "com.ctappium.MainActivity");
-        desiredCapabilities.setCapability("enableMultiWindows", true);
+//        desiredCapabilities.setCapability("enableMultiWindows", true);
 
 
         try {
