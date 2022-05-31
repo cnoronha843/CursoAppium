@@ -30,5 +30,10 @@ public class MenuPage extends BasePage {
     }
     public void acessarSwipe() throws MalformedURLException, InterruptedException {
         clicarFormulario ("Swipe");
+
+    }
+
+    public void clicarSwipeList() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("Swipe List");
     }
 }

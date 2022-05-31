@@ -17,7 +17,7 @@ public class OpcaoEscondidaTeste extends BaseTest {
     public void deveEncontrarOpcaoEscondida() throws MalformedURLException, InterruptedException {
         WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver (),10);//vai checar por 10 segundos
         wait.until (ExpectedConditions.presenceOfElementLocated (By.xpath ("//*[@text='Formulário']")));//vai esperar até que este xpath esteja na tela
-        menu.scroll (0.9,0.1);
+        menu.scrollDown ();
         menu.clicarPorTexto ("Opção bem escondida");
 
         Assert.assertEquals ("Você achou essa opção", menu.obterMenssagemAlerta ());

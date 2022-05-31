@@ -14,11 +14,11 @@ public class SwipeTeste extends BaseTest {
         menu.acessarSwipe ();
         Assert.assertTrue (menu.existeUmElementoPorTexto ("a esquerda"));
         //swipe para direita
-        menu.swipe (0.9,0.1);
+        menu.swipeRight ();
         Assert.assertTrue (menu.existeUmElementoPorTexto ("E veja se"));
         menu.clicarPorTexto ("›");
         Assert.assertTrue (menu.existeUmElementoPorTexto ("Chegar até o fim!"));
-        menu.swipe (0.1,0.9);
+        menu.swipeLeft ();
         menu.clicarPorTexto ("‹");
         Assert.assertTrue (menu.existeUmElementoPorTexto ("a esquerda"));
 

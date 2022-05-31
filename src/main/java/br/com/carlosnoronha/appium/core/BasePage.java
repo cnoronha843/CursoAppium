@@ -108,6 +108,10 @@ public class BasePage {
                 .perform ();
 
     }
+    public void scrollDown() throws MalformedURLException, InterruptedException {scroll (0.9,0.1);}
+    public void scrollUp() throws MalformedURLException, InterruptedException {scroll (0.1,0.9);}
+    public void swipeLeft() throws MalformedURLException, InterruptedException {swipe (0.1,0.9);}
+    public void swipeRight() throws MalformedURLException, InterruptedException {swipe (0.9,0.1);}
     public void swipe(double inicio, double fim) throws MalformedURLException, InterruptedException {
         //pegar o tamanho da tela
         Dimension size = getDriver ().manage ().window ().getSize ();
@@ -117,6 +121,23 @@ public class BasePage {
         int start_x = (int) (size.width * inicio);
         //Definir x final
         int end_x = (int) (size.width * fim);
+        //pressionar um ponto da tela
+        new TouchAction (getDriver ())
+                .press (PointOption.point (start_x,y))//segura neste ponto da tela
+                .waitAction (WaitOptions.waitOptions (Duration.ofMillis (500)))// espera por 500 milisegundos
+                .moveTo (PointOption.point (end_x,y))//arrasta até este ponto
+                .release ()//solta a tela
+                .perform ();
+
+    }
+    public void swipeElement(MobileElement element ,double inicio, double fim) throws MalformedURLException, InterruptedException {
+        //pegar o tamanho da tela
+        //Denifinir y
+        int y = element.getLocation ().y + (element.getSize ().height/2);
+        //Definir x inicial
+        int start_x = (int) (element.getSize ().width * inicio);
+        //Definir x final
+        int end_x = (int) (element.getSize ().width * fim);
         //pressionar um ponto da tela
         new TouchAction (getDriver ())
                 .press (PointOption.point (start_x,y))//segura neste ponto da tela
