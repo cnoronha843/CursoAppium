@@ -14,6 +14,10 @@ public class MenuPage extends BasePage {
         clicarFormulario ("Formulário");
 
     }
+    public void acessarSBNativo() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("SeuBarriga Nativo");
+
+    }
     public void acessarSplash() throws MalformedURLException, InterruptedException {
         clicarFormulario ("Splash");
 
@@ -39,10 +43,15 @@ public class MenuPage extends BasePage {
     public void clicarSwipeList() throws MalformedURLException, InterruptedException {
         clicarFormulario ("Swipe List");
     }
+    public void acessarSBHibrido() throws MalformedURLException, InterruptedException {
+        clicarFormulario ("SeuBarriga Híbrido");
+    }
     public void clicarDragNDrop() throws MalformedURLException, InterruptedException {
         WebDriverWait wait = new WebDriverWait (DriverFactory.getDriver (),10);
         wait.until (ExpectedConditions.presenceOfElementLocated (By.xpath ("//*[@text='Formulário']")));
         scrollDown ();
         clicarFormulario ("Drag and drop");
     }
+
+
 }
