@@ -1,8 +1,9 @@
 package br.com.carlosnoronha.appium.core;
 
 
+
+
 import org.apache.commons.io.FileUtils;
-import org.aspectj.util.FileUtil;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Rule;

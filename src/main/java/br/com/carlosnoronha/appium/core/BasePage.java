@@ -4,7 +4,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidElement;
 
+import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -57,6 +59,9 @@ public class BasePage {
     }
     public void clicarPorTextoButton(String texto) throws MalformedURLException, InterruptedException {
         getDriver ().findElement (By.xpath ("//android.view.Button[@text= '"+texto+"']")).click ();
+    }
+    public void clicarPorIndiceButton(int i) throws MalformedURLException, InterruptedException {
+        getDriver ().findElement (By.xpath ("//android.view.Button["+i+"]")).click ();
     }
     public void clicarPorId(String texto) throws MalformedURLException, InterruptedException {
         getDriver ().findElement (By.id (texto)).click ();
@@ -144,6 +149,13 @@ public class BasePage {
                 .waitAction (WaitOptions.waitOptions (Duration.ofMillis (500)))// espera por 500 milisegundos
                 .moveTo (PointOption.point (end_x,y))//arrasta até este ponto
                 .release ()//solta a tela
+                .perform ();
+
+    }
+    public void cliqueLongo(By by) throws MalformedURLException, InterruptedException {
+        AndroidElement  element = getDriver ().findElement (by);
+        new TouchAction (getDriver ())
+                .longPress (LongPressOptions.longPressOptions().withElement (ElementOption.element (element)))
                 .perform ();
 
     }

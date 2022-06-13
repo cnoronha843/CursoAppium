@@ -1,4 +1,4 @@
-package br.com.carlosnoronha.appium.page;
+package br.com.carlosnoronha.appium.page.seuBarriga;
 
 import br.com.carlosnoronha.appium.core.BasePage;
 import org.openqa.selenium.By;
@@ -16,4 +16,5 @@ public class SBLoginPage extends BasePage {
     public void entrar() throws MalformedURLException, InterruptedException {
         clicarPorTexto ("ENTRAR");
     }
+
 }
