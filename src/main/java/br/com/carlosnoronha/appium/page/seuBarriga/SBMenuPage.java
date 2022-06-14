@@ -6,11 +6,15 @@ import java.net.MalformedURLException;
 
 public class SBMenuPage extends BasePage {
     public void acessarContas() throws MalformedURLException, InterruptedException {
-        clicarPorTexto ("Contas");
+        clicarPorTexto ("CONTAS");
     }
 
     public void acessarMovimentacoes() throws MalformedURLException, InterruptedException {
-        clicarPorTexto ("Mov...");
+        clicarPorTexto ("MOV...");
+
+    }
+    public void acessarResumo() throws MalformedURLException, InterruptedException {
+        clicarPorTexto ("RESUMO");
 
     }
 }

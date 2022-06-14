@@ -2,10 +2,7 @@ package br.com.carlosnoronha.appium.test;
 
 import br.com.carlosnoronha.appium.core.BaseTest;
 import br.com.carlosnoronha.appium.page.MenuPage;
-import br.com.carlosnoronha.appium.page.seuBarriga.SBContasPage;
-import br.com.carlosnoronha.appium.page.seuBarriga.SBLoginPage;
-import br.com.carlosnoronha.appium.page.seuBarriga.SBMenuPage;
-import br.com.carlosnoronha.appium.page.seuBarriga.SBMovimentacaoPage;
+import br.com.carlosnoronha.appium.page.seuBarriga.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +16,7 @@ public class SBTeste extends BaseTest {
     SBMenuPage  menuSB = new SBMenuPage ();
     SBContasPage contas = new SBContasPage ();
     SBMovimentacaoPage mov = new SBMovimentacaoPage ();
-
+    SBResumoPage resumo = new SBResumoPage ();
 
     @Before
     public void setup() throws MalformedURLException, InterruptedException {
@@ -32,15 +29,15 @@ public class SBTeste extends BaseTest {
     @Test
     public void deveInserirContaComSucesso() throws MalformedURLException, InterruptedException {
         menuSB.acessarContas ();
-        contas.setContas ("ContaTeste2");
+        contas.setContas ("ContaTeste5");
         contas.salvar ();
         Assert.assertTrue (contas.existeUmElementoPorTexto ("Conta adicionada com sucesso"));
 
     }
     @Test
-    public void deveInserirExcluirComSucesso() throws MalformedURLException, InterruptedException {
+    public void deveExcluirComSucesso() throws MalformedURLException, InterruptedException {
         menuSB.acessarContas ();
-        contas.selecionarContas ("ContaTeste");
+        contas.selecionarContas ("ContaTeste3");
         Thread.sleep (3000);
         contas.excluir ();
         Thread.sleep (3000);
@@ -60,12 +57,30 @@ public class SBTeste extends BaseTest {
         mov.setInteressado ("interess");
         mov.salvar ();
         Assert.assertTrue (mov.existeUmElementoPorTexto ("Valor é um campo obrigatório"));
-        mov.setValor ("123");
+        mov.setValor ("1000");
         mov.salvar ();
         Assert.assertTrue (mov.existeUmElementoPorTexto ("Conta é um campo obrigatório"));
-        mov.setConta ("ContaTeste2");
+        mov.setConta ("ContaTeste5");
         mov.salvar ();
         Assert.assertTrue (mov.existeUmElementoPorTexto ("Movimentação cadastrada com sucesso"));
+
+    }
+    @Test
+    public void deveExcluirMovimentacao() throws MalformedURLException, InterruptedException {
+        menuSB.acessarResumo ();
+        Thread.sleep (2000);
+        resumo.selecionarMovimentacao ("123.00");
+        Thread.sleep (2000);
+        resumo.deletarMovimentacao ("Del");
+        Thread.sleep (2000);
+        Assert.assertTrue (mov.existeUmElementoPorTexto ("Movimentação removida com sucesso!"));
+        Thread.sleep (2000);
+
+
+
+
+
+
 
     }
 

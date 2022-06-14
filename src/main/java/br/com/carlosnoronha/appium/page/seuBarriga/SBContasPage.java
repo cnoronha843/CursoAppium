@@ -13,7 +13,7 @@ public class SBContasPage extends BasePage {
         clicarPorTexto ("SALVAR");
     }
     public void excluir() throws MalformedURLException, InterruptedException {
-        tap (960,134);
+        clicarPorTexto ("EXCLUIR");
     }
     public void selecionarContas ( String conta) throws MalformedURLException, InterruptedException {
         cliqueLongo (By.xpath ("//*[@text= '"+conta+"']"));
